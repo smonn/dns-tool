@@ -1,13 +1,77 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  margin: 0 auto;
+  padding: 2ch;
+  background-color: white;
+  color: black;
+  max-width: 70ch;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+form {
+  margin-bottom: 3rem;
+}
+
+label,
+input,
+select,
+button {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input,
+select {
+  margin-bottom: 1rem;
+  border: 1px solid silver;
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+input:focus,
+select:focus {
+  border-color: dodgerblue;
+}
+
+button {
+  width: auto;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+pre,
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background-color: snow;
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Courier New', Courier, monospace;
+}
+
+code {
+  display: inline-block;
+  padding: 0 .25rem;
+}
+
+pre {
+  padding: 2ch;
+  margin: 0 -2ch;
 }
