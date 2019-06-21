@@ -42,7 +42,7 @@ function App() {
       <p>DNS lookup using Cloudflare's DNS servers (<code>1.1.1.1</code> and <code>1.0.0.1</code>). More options and reverse lookup to be added...</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="hostname">Hostname</label>
-        <input disabled={submitting} id="hostname" name="hostname" required value={hostname} onChange={handleChange} />
+        <input disabled={submitting} id="hostname" name="hostname" type="url" required value={hostname} onChange={handleChange} />
         <label htmlFor="type">Type</label>
         <select id="type" name="type" value={type} onChange={handleChange}>
           <option>A</option>
