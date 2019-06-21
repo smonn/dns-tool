@@ -1,22 +1,34 @@
 {
   "name": "dns-tool",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.1.0",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "babel-preset-gatsby": "^0.2.0",
+    "gatsby": "^2.10.0",
+    "gatsby-image": "^2.2.1",
+    "gatsby-plugin-manifest": "^2.2.0",
+    "gatsby-plugin-offline": "^2.2.0",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-typescript": "^2.1.0",
+    "gatsby-source-filesystem": "^2.1.0",
+    "gatsby-transformer-sharp": "^2.2.0",
+    "netlify-lambda": "^1.4.13",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "typescript": "^3.5.2"
   },
-  "scripts": {
-    "start:app": "react-scripts start",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "build": "yarn build:app && yarn build:lambda",
-    "build:app": "react-scripts build",
-    "build:lambda": "netlify-lambda build src/lambda",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "prettier": "^1.18.2"
   },
   "browserslist": {
     "production": [
@@ -30,17 +42,15 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/aws-lambda": "^8.10.27",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.0.8",
-    "@types/react": "16.8.22",
-    "@types/react-dom": "16.8.4",
-    "http-proxy-middleware": "^0.19.1",
-    "netlify-lambda": "^1.4.13",
-    "react-scripts": "3.0.1",
-    "regenerator-runtime": "^0.13.2",
-    "typescript": "3.5.2"
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:app && yarn build:lambda",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start:app": "gatsby develop",
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }

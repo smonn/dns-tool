@@ -1,11 +1,13 @@
 import React, { useMemo, useState } from 'react';
-import GitHubOctocat from './assets/GitHubOctocat.svg';
-import LookupForm, { LookupData } from './components/LookupForm';
-import { servers } from './config';
-import Tabs from './components/Tabs';
-import ReverseForm, { ReverseData } from './components/ReverseForm';
+import GitHubOctocat from '../assets/GitHubOctocat.svg';
+import LookupForm, { LookupData } from '../components/LookupForm';
+import { servers } from '../config';
+import Tabs from '../components/Tabs';
+import ReverseForm, { ReverseData } from '../components/ReverseForm';
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
 
-function App() {
+function Index() {
   const [result, setResult] = useState<any>(null);
   const [mode, setMode] = useState('lookup');
 
@@ -42,7 +44,8 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Layout>
+      <SEO title="DNS Tool" />
       <h1>DNS Tool</h1>
       <p>DNS lookup and reverse IP lookup using public DNS servers.</p>
       <Tabs onChange={setMode} current={mode} items={[{ value: 'lookup', label: 'Lookup' }, { value: 'reverse', label: 'Reverse' }]} />
@@ -50,10 +53,10 @@ function App() {
       {mode === 'reverse' && <ReverseForm onSubmit={handleSubmitReverse} />}
       <pre>{result ? JSON.stringify(result, null, 2) : '--- result will be displayed here'}</pre>
       <div className="Footer">
-        <a href="https://github.com/smonn/dns-tool"><img src={GitHubOctocat} alt="Source code on GitHub" /></a>
+        <a href="https://github.com/smonn/dns-tool"><GitHubOctocat /></a>
       </div>
-    </div>
+    </Layout>
   );
 }
 
-export default App;
+export default Index;
