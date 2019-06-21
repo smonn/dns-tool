@@ -40,6 +40,7 @@
     "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.4.13",
     "react-scripts": "3.0.1",
+    "regenerator-runtime": "^0.13.2",
     "typescript": "3.5.1"
   }
 }
