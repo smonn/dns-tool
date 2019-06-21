@@ -1,0 +1,34 @@
+.Button {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.Button::-moz-focus-inner {
+  border: 0;
+}
+
+.Button {
+  width: auto;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.Button:hover:not(:disabled),
+.Button:focus:not(:disabled) {
+  background-color: royalblue;
+  border-color: royalblue;
+}
+
+.Button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

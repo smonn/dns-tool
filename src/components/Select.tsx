@@ -12,6 +12,7 @@ export type SelectProps = {
   disabled?: boolean;
   name?: string;
   value: string;
+  required?: boolean;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 

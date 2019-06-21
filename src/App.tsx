@@ -1,5 +1,23 @@
 import React, { useState, useMemo, FormEvent, ChangeEvent } from 'react';
 import Select, { Option } from './components/Select';
+import Input from './components/Input';
+import Button from './components/Button';
+import Label from './components/Label';
+
+type ServerMap = {
+  [key: string]: string[];
+  Cloudflare: string[];
+  Google: string[];
+  Verisign: string[];
+  'DNS.Watch': string[];
+}
+
+const servers: ServerMap = {
+  Cloudflare: ['1.1.1.1','1.0.0.1'],
+  Google: ['8.8.8.8','8.8.4.4'],
+  Verisign: ['64.6.64.6','64.6.65.6'],
+  'DNS.Watch': ['84.200.69.80', '84.200.70.40'],
+};
 
 const typeOptions: Option[] = [
   { value: 'A', text: 'A - IPv4 addresses' },
@@ -14,9 +32,15 @@ const typeOptions: Option[] = [
   { value: 'TXT', text: 'TXT - Text records' },
 ];
 
+const serverOptions: Option[] = Object.keys(servers).map(server => ({
+  value: server,
+  text: `${server} - ${servers[server].join(', ')}`
+}));
+
 function App() {
   const [hostname, setHostname] = useState('');
   const [type, setType] = useState('A');
+  const [server, setServer] = useState('Cloudflare');
   const [result, setResult] = useState<any>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -27,7 +51,7 @@ function App() {
         event.preventDefault();
         const res = await fetch('/.netlify/functions/lookup', {
           method: 'POST',
-          body: JSON.stringify({ servers: ['1.1.1.1', '1.0.0.1'], hostname, type })
+          body: JSON.stringify({ servers: servers[server], hostname, type })
         });
 
         const json = await res.json();
@@ -38,7 +62,7 @@ function App() {
         setSubmitting(false);
       }
     };
-  }, [hostname, type]);
+  }, [hostname, server, type]);
 
   const handleChange = useMemo(() => {
     return (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -48,24 +72,31 @@ function App() {
       if (event.target.name === 'type') {
         setType(event.target.value);
       }
+      if (event.target.name === 'server') {
+        setServer(event.target.value);
+      }
     };
   }, []);
 
   return (
     <div>
-      <p>DNS lookup using Cloudflare's DNS servers (<code>1.1.1.1</code> and <code>1.0.0.1</code>). More options and reverse lookup to be added...</p>
+      <p>DNS lookup using public DNS servers. More options and reverse lookup to be added...</p>
       <p><a href="https://github.com/smonn/dns-tool">Source code on GitHub</a></p>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="hostname">Hostname <small>e.g. www.example.com</small></label>
-          <input autoCapitalize="none" autoCorrect="off" disabled={submitting} id="hostname" name="hostname" type="text" pattern="^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$" required value={hostname} onChange={handleChange} />
+          <Label htmlFor="server">Public DNS Server</Label>
+          <Select disabled={submitting} options={serverOptions} value={server} onChange={handleChange} id="server" name="server" />
         </div>
         <div>
-          <label htmlFor="type">Type <small>DNS record type</small></label>
+          <Label htmlFor="hostname" hint="e.g. www.example.com">Hostname</Label>
+          <Input disabled={submitting} id="hostname" name="hostname" type="text" pattern="^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$" required value={hostname} onChange={handleChange} />
+        </div>
+        <div>
+          <Label htmlFor="type" hint="DNS record type">Type</Label>
           <Select disabled={submitting} options={typeOptions} value={type} onChange={handleChange} id="type" name="type" />
         </div>
         <div>
-          <button disabled={submitting} type="submit">Lookup</button>
+          <Button disabled={submitting} type="submit">Lookup</Button>
         </div>
       </form>
       <pre>{result ? JSON.stringify(result, null, 2) : '--- result will be displayed here'}</pre>

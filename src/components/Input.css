@@ -1,0 +1,29 @@
+.Input {
+  -webkit-appearance: none;
+  border-radius: .25rem;
+  border: 1px solid silver;
+  box-shadow: none;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.Input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 .25rem dodgerblue;
+  outline: none;
+}
+
+.Input:disabled {
+  opacity: 0.5;
+  background-color: whitesmoke;
+  color: grey;
+}
+
+.Input::-moz-focus-inner {
+  border: 0;
+}

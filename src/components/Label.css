@@ -1,0 +1,11 @@
+.Label {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.Label-hint {
+  color: grey;
+}
