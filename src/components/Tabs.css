@@ -1,11 +1,13 @@
 .Tabs {
+  box-shadow: inset 0 -2px whitesmoke;
   margin-bottom: 1.5rem;
 }
 
 .Tab {
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid silver;
+  border-bottom: 2px solid whitesmoke;
+  color: grey;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -17,10 +19,12 @@
 .Tab:hover:not(:disabled),
 .Tab:focus:not(:disabled) {
   border-bottom-color: royalblue;
+  color: black;
 }
 
 .Tab-active {
   border-bottom-color: dodgerblue;
+  color: black;
 }
 
 .Tab:focus {
