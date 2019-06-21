@@ -3,6 +3,7 @@ import Select, { Option } from './components/Select';
 import Input from './components/Input';
 import Button from './components/Button';
 import Label from './components/Label';
+import GitHubOctocat from './assets/GitHubOctocat.svg';
 
 type ServerMap = {
   [key: string]: string[];
@@ -80,8 +81,8 @@ function App() {
 
   return (
     <div>
+      <h1>DNS Tool</h1>
       <p>DNS lookup using public DNS servers. More options and reverse lookup to be added...</p>
-      <p><a href="https://github.com/smonn/dns-tool">Source code on GitHub</a></p>
       <form onSubmit={handleSubmit}>
         <div>
           <Label htmlFor="server">Public DNS Server</Label>
@@ -100,6 +101,9 @@ function App() {
         </div>
       </form>
       <pre>{result ? JSON.stringify(result, null, 2) : '--- result will be displayed here'}</pre>
+      <div className="Footer">
+        <a href="https://github.com/smonn/dns-tool"><img src={GitHubOctocat} alt="Source code on GitHub" /></a>
+      </div>
     </div>
   );
 }

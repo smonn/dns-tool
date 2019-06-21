@@ -30,6 +30,7 @@ a:hover {
   color: royalblue;
 }
 
+h1,
 p {
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -54,4 +55,9 @@ pre {
   padding: 2ch;
   margin: 0 -2ch;
   overflow-x: auto;
+}
+
+.Footer {
+  margin-top: 2ch;
+  text-align: center;
 }
