@@ -36,17 +36,27 @@ button {
   line-height: inherit;
 }
 
-input,
-select {
+label small {
+  color: grey;
+}
+
+input {
+  box-shadow: none;
   margin-bottom: 1rem;
   border: 1px solid silver;
   padding: .5rem;
   border-radius: .25rem;
 }
 
-input:focus,
-select:focus {
+input:focus {
   border-color: dodgerblue;
+  box-shadow: 0 0 .25rem dodgerblue;
+  outline: none;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
 }
 
 button {
@@ -58,11 +68,18 @@ button {
   text-transform: uppercase;
   padding: .5rem 1rem;
   border-radius: .25rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: royalblue;
+  border-color: royalblue;
 }
 
 pre,
 code {
-  background-color: snow;
+  background-color: whitesmoke;
   font-family: 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Courier New', Courier, monospace;
 }
 
@@ -74,4 +91,5 @@ code {
 pre {
   padding: 2ch;
   margin: 0 -2ch;
+  overflow-x: auto;
 }

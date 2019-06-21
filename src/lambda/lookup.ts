@@ -1,9 +1,9 @@
 import { Handler, Context, Callback, APIGatewayEvent } from "aws-lambda"
 import { Resolver } from 'dns';
 
-type RRType = 'A' | 'AAAA' | 'ANY' | 'CNAME' | 'MX' | 'NAPTR' | 'NS' | 'PTR' | 'SOA' | 'SRV' | 'TXT';
+export type RRType = 'A' | 'AAAA' | 'ANY' | 'CNAME' | 'MX' | 'NAPTR' | 'NS' | 'PTR' | 'SOA' | 'SRV' | 'TXT';
 
-type LookupRequest = {
+export type LookupRequest = {
   servers: string[];
   hostname: string;
   type: RRType;
