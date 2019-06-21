@@ -9,6 +9,7 @@ export type Option = {
 export type SelectProps = {
   options: (string | Option)[];
   id?: string;
+  disabled?: boolean;
   name?: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;

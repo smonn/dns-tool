@@ -70,7 +70,7 @@ const handler: Handler<APIGatewayEvent, LookupResponse> = async (event) => {
     if (!event.body) {
       throw new StatusCodeError('Missing request body.', 400);
     }
-  
+
     const request: LookupRequest = JSON.parse(event.body);
     const result = await resolveAsync(request);
 

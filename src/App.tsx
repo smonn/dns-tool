@@ -62,7 +62,7 @@ function App() {
         </div>
         <div>
           <label htmlFor="type">Type <small>DNS record type</small></label>
-          <Select options={typeOptions} value={type} onChange={handleChange} id="type" name="type" />
+          <Select disabled={submitting} options={typeOptions} value={type} onChange={handleChange} id="type" name="type" />
         </div>
         <div>
           <button disabled={submitting} type="submit">Lookup</button>
