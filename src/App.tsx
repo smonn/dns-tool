@@ -1,17 +1,17 @@
 import React, { useState, useMemo, FormEvent, ChangeEvent } from 'react';
-import Select from './components/Select';
+import Select, { Option } from './components/Select';
 
-const typeOptions = [
-  'A',
-  'AAAA',
-  'CNAME',
-  'MX',
-  'NAPTR',
-  'NS',
-  'PTR',
-  'SOA',
-  'SRV',
-  'TXT',
+const typeOptions: Option[] = [
+  { value: 'A', text: 'A - IPv4 addresses' },
+  { value: 'AAAA', text: 'AAAA - IPv6 addresses' },
+  { value: 'CNAME', text: 'CNAME - Canonical Name records' },
+  { value: 'MX', text: 'MX - Mail Exchange records' },
+  { value: 'NAPTR', text: 'NAPTR - Name Authority Pointer records' },
+  { value: 'NS', text: 'NS - Name Server records' },
+  { value: 'PTR', text: 'PTR - Pointer records' },
+  { value: 'SOA', text: 'SOA - Start of Authority records' },
+  { value: 'SRV', text: 'SRV - Service records' },
+  { value: 'TXT', text: 'TXT - Text records' },
 ];
 
 function App() {
