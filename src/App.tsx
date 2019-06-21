@@ -54,6 +54,7 @@ function App() {
   return (
     <div>
       <p>DNS lookup using Cloudflare's DNS servers (<code>1.1.1.1</code> and <code>1.0.0.1</code>). More options and reverse lookup to be added...</p>
+      <p><a href="https://github.com/smonn/dns-tool">Source code on GitHub</a></p>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="hostname">Hostname <small>e.g. www.example.com</small></label>
