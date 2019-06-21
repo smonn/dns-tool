@@ -4,6 +4,11 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  margin: 0;
+}
+
+.Button:focus {
+  outline: none;
 }
 
 .Button::-moz-focus-inner {

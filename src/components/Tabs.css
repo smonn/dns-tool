@@ -1,0 +1,32 @@
+.Tabs {
+  margin-bottom: 1.5rem;
+}
+
+.Tab {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid silver;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  cursor: pointer;
+  padding: .5rem;
+}
+
+.Tab:hover:not(:disabled),
+.Tab:focus:not(:disabled) {
+  border-bottom-color: royalblue;
+}
+
+.Tab-active {
+  border-bottom-color: dodgerblue;
+}
+
+.Tab:focus {
+  outline: none;
+}
+
+.Tab::-moz-focus-inner {
+  border: 0;
+}
