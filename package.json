@@ -45,7 +45,7 @@
   "scripts": {
     "build": "yarn build:app && yarn build:lambda",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "BABEL_ENV=lambda netlify-lambda build src/lambda",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start:app": "gatsby develop",
     "start:lambda": "BABEL_ENV=lambda netlify-lambda serve src/lambda",
