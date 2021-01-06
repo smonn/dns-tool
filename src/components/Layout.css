@@ -14,7 +14,9 @@ body {
   background-color: white;
   color: black;
   max-width: 70ch;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   font-size: 100%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -43,12 +45,13 @@ form {
 pre,
 code {
   background-color: whitesmoke;
-  font-family: 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Courier New', Courier, monospace;
+  font-family: "Menlo", "Monaco", "Consolas", "Andale Mono", "Courier New",
+    Courier, monospace;
 }
 
 code {
   display: inline-block;
-  padding: 0 .25rem;
+  padding: 0 0.25rem;
 }
 
 pre {
@@ -58,7 +61,6 @@ pre {
 }
 
 .Container {
-  
 }
 
 .Footer {

@@ -9,11 +9,19 @@ import React, { MetaHTMLAttributes, DetailedHTMLProps } from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }: {
-  description?: string;
-  lang?: string;
-  meta?: DetailedHTMLProps<MetaHTMLAttributes<HTMLMetaElement>, HTMLMetaElement>[];
-  title: string;
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+}: {
+  description?: string
+  lang?: string
+  meta?: DetailedHTMLProps<
+    MetaHTMLAttributes<HTMLMetaElement>,
+    HTMLMetaElement
+  >[]
+  title: string
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -29,7 +37,7 @@ function SEO({ description, lang, meta, title }: {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
   const metaItems = (meta || []).concat([
     {
       name: `description`,

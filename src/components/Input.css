@@ -1,10 +1,10 @@
 .Input {
   -webkit-appearance: none;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: 1px solid silver;
   box-shadow: none;
   margin-bottom: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   display: block;
   width: 100%;
   font-family: inherit;
@@ -14,7 +14,7 @@
 
 .Input:focus {
   border-color: dodgerblue;
-  box-shadow: 0 0 .25rem dodgerblue;
+  box-shadow: 0 0 0.25rem dodgerblue;
   outline: none;
 }
 
